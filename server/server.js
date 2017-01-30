@@ -66,7 +66,12 @@ Marker.count({}, function(err, count){
             });
  
             newMarker.save(function(err, doc){
-                console.log("Created test document: " + doc._id);
+                if (doc != null) {
+                    console.log("Created test document: " + doc._id);
+                }
+                if (err != null) {
+                    console.log("err: " + err);
+                }
             });
         }
  
